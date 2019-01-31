@@ -246,6 +246,7 @@ function draw(){
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  background(0, 0, 10, 1); //Stops the flash to white on screen resize.
 }
 
 function mousePressed(){
