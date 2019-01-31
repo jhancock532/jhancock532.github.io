@@ -142,7 +142,7 @@ class ParticleSimulation {
     spawnFolder.add(this, 'maxAdditionalInitialForce', 0, 100).name("Max. Add. Force");
     
     let appearanceFolder = gui.addFolder("Appearance");
-    appearanceFolder.add(this, 'minDarkness', 0, 1).name("Darkness");
+    appearanceFolder.add(this, 'minDarkness', 0, 1).name("Brightness");
     appearanceFolder.add(this, 'minSize', 0, 20).name("Min. Size");
     appearanceFolder.add(this, 'sizeVariation', 0, 20).name("Size Variation");
     
