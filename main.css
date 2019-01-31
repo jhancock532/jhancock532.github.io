@@ -1,0 +1,110 @@
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: none;
+  margin: 0;
+  z-index: -1;
+}
+
+#projects {
+  display:none;
+}
+
+#code {
+  display:none;
+}
+
+#extracirricular {
+  display: none;
+}
+
+#experience {
+  display: none;
+}
+
+a {
+  text-decoration: underline;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:link {
+  color: #fff;
+}
+
+a:hover {
+  color: #888;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-in;
+  -moz-transition: 0.3s ease-in;
+  -o-transition: 0.3s ease-in;
+}
+
+h1 {
+  color: #888;
+  mix-blend-mode: difference;
+  font-family: 'Overpass Mono', monospace;
+  font-weight: 700;
+  font-size: 3em;
+}
+
+li {
+  color: #fff;
+  font-family: 'Overpass Mono', monospace;
+  font-size: 1.2em;
+}
+
+.close-button {
+  color: #fff;
+  font-family: 'Overpass Mono', monospace;
+  font-size: 1em;
+}
+
+p {
+  color: #fff;
+  font-family: 'Overpass Mono', monospace;
+  font-size: 1.2em;
+}
+
+#content {
+  padding: 4%;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.7s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+  #subtitle {
+    width: 100%;
+  }
+  
+  li {
+    padding-bottom: 0.5em;
+  }
+} 
+
+@media only screen and (min-width: 768px) {
+  #subtitle {
+    width: 70%;
+  }
+}
