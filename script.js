@@ -258,5 +258,6 @@ function showSection(sectionId){
   document.getElementById("code").style.display = "none";
   document.getElementById("extracirricular").style.display = "none";
   document.getElementById("experience").style.display = "none";
+  document.getElementById("press").style.display = "none";
   document.getElementById(sectionId).style.display = "block";
 }
