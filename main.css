@@ -58,6 +58,14 @@ h1 {
   font-size: 3em;
 }
 
+h3 {
+  color: #FFF;
+  font-family: 'Overpass Mono', monospace;
+  font-weight: 500;
+  font-size: 2.3em;
+}
+
+
 li {
   color: #fff;
   font-family: 'Overpass Mono', monospace;
