@@ -1,0 +1,20 @@
+.profile-header {
+  grid-column: 5 / 11;
+  justify-self: end;
+
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #222;
+
+  &__picture {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+  }
+  &__name {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  &__buttons {
+    background-color: blue;
+  }
+}
