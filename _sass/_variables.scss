@@ -1,0 +1,69 @@
+
+$grid: 20px;
+
+/**
+ * Colour Scheme
+ * Go to https://coolors.co for more colours / making modifications.
+ */
+
+$color--neon-blue: #08F7FE;
+$color--neon-green: #09FBD3;
+$color--neon-pink: #FE53BB;
+$color--neon-yellow: #F5D300;
+$color--neon-red: #FF331F;
+
+$color--white: #FDFFFC;
+$color--dark-grey: #2B2C28;
+$color--black: #0D0F0F;
+ 
+$primary-color: $color--white;
+$secondary-color: $color--dark-grey;
+
+/** Media Query Breakpoints */
+
+$media-query-breakpoints: (
+  xs: 576px, //Mobile Landscape
+  sm: 768px, //Tablet Portrait
+  md: 992px, //Tablet Landscape
+  lg: 1200px //Desktop
+);
+
+/** Typography Variables */
+
+$font-primary: Verdana, Arial, Tahoma, Serif;
+$font-secondary: Helvetica;
+
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+ 
+$mobile-font-sizes: (
+  xxs: 8px,
+  xs: 10px,
+  s: 12px,
+  m: 14px,
+  l: 18px,
+  xl: 22px,
+  xxl: 28px,
+  xxxl: 36px
+);
+
+$tablet-font-sizes: (
+  xxs: 8px,
+  xs: 10px,
+  s: 12px,
+  m: 14px,
+  l: 18px,
+  xl: 22px,
+  xxl: 28px,
+  xxxl: 36px
+);
+
+$desktop-font-sizes: (
+  xxs: 10px,
+  xs: 12px,
+  s: 14px,
+  m: 18px,
+  l: 22px,
+  xl: 26px,
+  xxl: 32px,
+  xxxl: 48px
+);

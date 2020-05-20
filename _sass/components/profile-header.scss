@@ -1,20 +1,23 @@
 .profile-header {
   grid-column: 5 / 11;
-  justify-self: end;
-
-  flex-direction: column;
-  justify-content: flex-end;
   background-color: #222;
 
   &__picture {
     height: 200px;
     width: 200px;
     background-color: red;
+    margin-left: auto;
   }
+
   &__name {
-    font-family: 'Courier New', Courier, monospace;
+    @include font-size(xl);
+    color: $primary-color;
+    margin-left: auto;
   }
+
   &__buttons {
-    background-color: blue;
+    height: 20px;
+    @include font-size(m);
+    margin-left: auto;
   }
 }

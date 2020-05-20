@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  background: $color--black;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @include media-query(sm){
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  
+  @include media-query(md){
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  @include media-query(lg){
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  grid-gap: $grid;
+}
+
+p, a, li, h1, h2, h3, h4, h5 {
+  font-family: $font-primary;
+}
+
+a {
+  color: $color--neon-blue;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+::-moz-selection {
+  color: $color--black;
+  background: $color--neon-green;
+}
+
+::selection {
+  color: $color--black;
+  background: $color--neon-green;
+}
+
+
