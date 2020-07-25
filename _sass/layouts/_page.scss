@@ -1,0 +1,7 @@
+.page {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: auto minmax(65ch, 300px) 100px;
+
+  }
+}
