@@ -1,14 +1,26 @@
 .homepage {
   &__background {
     height: 100vh;
-    width: 100wh;
-    background-color: #ffffdd;
+    background: rgb(241,189,212);
+    background: linear-gradient(80deg, rgba(241,189,212,1) 0%, rgba(183,210,241,1) 100%); 
   }
 
   &__jumbotron {
     position: absolute;
     bottom: 2 * $grid;
     left: 2 * $grid;
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    @include font-size(xxxl);
+  }
+
+  &__tagline {
+    font-family: $font-primary;
+    font-weight: 400;
+    @include font-size(xl);
+    margin: 0;
   }
 
   &__menu {

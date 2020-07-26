@@ -24,16 +24,38 @@ $secondary-color: $color--dark-grey;
 /** Media Query Breakpoints */
 
 $media-query-breakpoints: (
-  xs: 576px, //Mobile Landscape
-  sm: 768px, //Tablet Portrait
-  md: 992px, //Tablet Landscape
+  sm: 600px, //Mobile Landscape
+  md: 900px, //Tablet Landscape
   lg: 1200px //Desktop
 );
 
 /** Typography Variables */
 
+/** Typography Variables
+ * Primary font (body) - Crimson Pro
+ * Secondary font (headings) - SourceCodePro  
+ */
+
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("/assets/fonts/SourceCodePro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("/assets/fonts/SourceCodePro-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("/assets/fonts/SourceCodePro-Bold.ttf");
+  font-weight: 700;
+}
+
+
 $font-primary: Verdana, Arial, Tahoma, Serif;
-$font-secondary: Helvetica;
+$font-secondary: SourceCodePro, Helvetica;
 
 $font-weights: ("regular": 400, "medium": 500, "bold": 700);
  
@@ -45,16 +67,16 @@ $mobile-font-sizes: (
   l: 18px,
   xl: 22px,
   xxl: 28px,
-  xxxl: 36px
+  xxxl: 32px
 );
 
 $tablet-font-sizes: (
   xxs: 8px,
   xs: 10px,
   s: 12px,
-  m: 14px,
+  m: 18px,
   l: 18px,
-  xl: 22px,
+  xl: 24px,
   xxl: 28px,
   xxxl: 36px
 );
@@ -65,7 +87,7 @@ $desktop-font-sizes: (
   s: 14px,
   m: 18px,
   l: 22px,
-  xl: 26px,
+  xl: 24px,
   xxl: 32px,
   xxxl: 48px
 );

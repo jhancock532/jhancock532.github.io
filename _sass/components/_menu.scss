@@ -1,5 +1,7 @@
 .menu {
   text-align: right;
 
-  
+  &__options-list {
+    display: none;
+  }
 }

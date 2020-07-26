@@ -1,5 +1,15 @@
 .button {
-  padding: $grid / 4;
+  padding: $grid / 4 $grid / 4 $grid / 4 $grid / 4 + 1px;
   border: 2px solid $color--black;
   display: inline-block;
+  line-height: 1em;
+  margin: 0;
+  font-family: $font-secondary;
+  letter-spacing: 2px;
+  @include font-size(xl);
+
+  &:hover {
+    cursor: pointer;
+  }
+
 }
