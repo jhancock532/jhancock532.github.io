@@ -12,14 +12,19 @@
   }
 
   &__title {
-    font-family: $font-secondary;
+    font-family: $font-primary;
     @include font-size(xxxl);
+    margin: 0;
+    line-height: 1em;
+    padding-bottom: $grid + 5px;
   }
 
   &__tagline {
-    font-family: $font-primary;
+    font-family: $font-secondary;
+    text-transform: uppercase;
     font-weight: 400;
     @include font-size(xl);
+    line-height: 1em;
     margin: 0;
   }
 
@@ -33,5 +38,9 @@
     position: absolute;
     bottom: 2 * $grid;
     right: 2 * $grid;
+
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    @include font-size(xl);
   }
 }

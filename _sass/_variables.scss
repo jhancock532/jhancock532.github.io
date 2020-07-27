@@ -12,9 +12,10 @@ $color--neon-pink: #FE53BB;
 $color--neon-yellow: #F5D300;
 $color--neon-red: #FF331F;
 
-$color--blue:rgb(0, 136, 141);
+$color--blue:rgb(23, 111, 212);
 
 $color--white: #FDFFFC;
+$color--grey: #52534c;
 $color--dark-grey: #2B2C28;
 $color--black: #0D0F0F;
  
@@ -29,33 +30,62 @@ $media-query-breakpoints: (
   lg: 1200px //Desktop
 );
 
-/** Typography Variables */
-
 /** Typography Variables
- * Primary font (body) - Crimson Pro
- * Secondary font (headings) - SourceCodePro  
+ * Primary font (Headings, body text) - Roboto
+ * Secondary font (UI, links, emphasis) - SourceCodePro  
+ * (This is an unconventional design choice. Oh well.)
  */
 
+//Roboto
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto/Roboto-Light.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto/Roboto-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/Roboto/Roboto-Regular.ttf");
+}
+
+//SourceCodePro
 @font-face {
   font-family: "SourceCodePro";
-  src: url("/assets/fonts/SourceCodePro-Regular.ttf");
+  src: url("/assets/fonts/SourceCodePro/SourceCodePro-Regular.ttf");
 }
 
 @font-face {
   font-family: "SourceCodePro";
-  src: url("/assets/fonts/SourceCodePro-Medium.ttf");
+  src: url("/assets/fonts/SourceCodePro/SourceCodePro-Medium.ttf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "SourceCodePro";
-  src: url("/assets/fonts/SourceCodePro-Bold.ttf");
+  src: url("/assets/fonts/SourceCodePro/SourceCodePro-Bold.ttf");
   font-weight: 700;
 }
 
 
-$font-primary: Verdana, Arial, Tahoma, Serif;
-$font-secondary: SourceCodePro, Helvetica;
+$font-primary: Roboto, Sans-serif;
+$font-secondary: SourceCodePro, Helvetica, Sans-serif;
 
 $font-weights: ("regular": 400, "medium": 500, "bold": 700);
  
@@ -78,7 +108,7 @@ $tablet-font-sizes: (
   l: 18px,
   xl: 24px,
   xxl: 28px,
-  xxxl: 36px
+  xxxl: 48px
 );
 
 $desktop-font-sizes: (
