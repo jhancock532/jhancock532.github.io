@@ -83,6 +83,14 @@ $media-query-breakpoints: (
   font-weight: 700;
 }
 
+//Iconography
+//Various icon sets, sourced from fontello.com.
+@font-face {
+  font-family: 'fontello';
+  src: url("/assets/fonts/Fontello/fontello.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 $font-primary: Roboto, Sans-serif;
 $font-secondary: SourceCodePro, Helvetica, Sans-serif;
@@ -121,3 +129,4 @@ $desktop-font-sizes: (
   xxl: 32px,
   xxxl: 48px
 );
+

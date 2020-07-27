@@ -42,5 +42,11 @@
     font-family: $font-secondary;
     text-transform: uppercase;
     @include font-size(xl);
+
+    i {
+      font-size: 90%;
+      margin-left: -1px;
+    }
+    
   }
 }
