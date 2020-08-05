@@ -12,11 +12,13 @@
   }
 
   &__title {
-    font-family: $font-primary;
+    font-family: $font-secondary;
+    text-transform: uppercase;
     @include font-size(xxxl);
     margin: 0;
     line-height: 1em;
     padding-bottom: $grid + 5px;
+    font-weight: 500;
   }
 
   &__tagline {
@@ -43,7 +45,7 @@
     text-transform: uppercase;
     @include font-size(xl);
 
-    i {
+    .download-cloud-icon {
       font-size: 90%;
       margin-left: -1px;
     }

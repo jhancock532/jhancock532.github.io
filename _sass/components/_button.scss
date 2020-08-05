@@ -1,5 +1,5 @@
 .button {
-  padding: $grid / 4;
+  padding: $grid * 3 / 4;
   border: 2px solid $color--black;
   display: inline-block;
   line-height: 1em;
@@ -11,5 +11,4 @@
   &:hover {
     cursor: pointer;
   }
-
 }

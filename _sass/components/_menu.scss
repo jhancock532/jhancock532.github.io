@@ -1,11 +1,29 @@
 .menu {
   text-align: right;
 
-  &__options-list {
-    display: none;
+  &__options-container {
+    position: relative;
+    width: 80vw;
+    margin-top: $grid;
+  }
+
+  &__option {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    
+    @include font-size(xl);
+    font-family: $font-secondary;
+    text-transform: uppercase;
   }
 
   &__burger-icon {
     font-size: 92%;
+  }
+
+  &__arrow-icon {
+    font-size: 92%;
+    padding-left: 9px;
   }
 }
