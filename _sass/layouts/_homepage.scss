@@ -75,7 +75,7 @@
 
   &__portfolio-link {
     position: absolute;
-    bottom: $grid;
+    bottom: $grid + $grid / 2;
     left: $grid;
 
     @include media-query(sm){
