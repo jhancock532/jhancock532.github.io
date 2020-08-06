@@ -5,10 +5,34 @@
     background: linear-gradient(80deg, rgba(241,189,212,1) 0%, rgba(183,210,241,1) 100%); 
   }
 
+  &__background-menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: rgb(255, 255, 255);
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 1s ease-out;
+  }
+
   &__jumbotron {
     position: absolute;
-    bottom: 2 * $grid;
-    left: 2 * $grid;
+    left: $grid;
+    bottom: 4 * $grid;
+    width: calc(100% - 40px);
+
+    @include media-query(sm){
+      left: 2 * $grid;
+      bottom: 5 * $grid;
+      width: calc(100% - 80px);
+    }
+
+    @include media-query(md){
+      bottom: 2 * $grid;
+    }
+
   }
 
   &__title {
@@ -17,8 +41,14 @@
     @include font-size(xxxl);
     margin: 0;
     line-height: 1em;
-    padding-bottom: $grid + 5px;
-    font-weight: 500;
+
+    padding-bottom: $grid;
+    font-weight: 700;
+
+    @include media-query(md){
+      font-weight: 500;
+      padding-bottom: $grid + 5px;
+    }
   }
 
   &__tagline {
@@ -26,20 +56,37 @@
     text-transform: uppercase;
     font-weight: 400;
     @include font-size(xl);
-    line-height: 1em;
+    line-height: 1.25em;
     margin: 0;
   }
 
   &__menu {
     position: absolute;
-    top: 2 * $grid;
-    right: 2 * $grid;
+    z-index: 3;
+
+    top: 1 * $grid;
+    right: 1 * $grid;
+
+    @include media-query(sm){
+      top: 2 * $grid;
+      right: 2 * $grid;
+    }
   }
 
   &__portfolio-link {
     position: absolute;
-    bottom: 2 * $grid;
-    right: 2 * $grid;
+    bottom: $grid;
+    left: $grid;
+
+    @include media-query(sm){
+      bottom: 2 * $grid;
+      left: 2 * $grid;
+    }
+
+    @include media-query(md){
+      right: 2 * $grid;
+      left: initial;
+    }
 
     font-family: $font-secondary;
     text-transform: uppercase;

@@ -41,7 +41,7 @@ a {
     opacity: 0%;
     transition: height 0.3s, opacity 0.3s;
     transition-timing-function: ease-out;
-    mix-blend-mode: difference;
+    mix-blend-mode: multiply;
   }
 
   &:hover::before, &:focus::before {

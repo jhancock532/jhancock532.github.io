@@ -3,7 +3,7 @@
 
   &__options-container {
     position: relative;
-    width: 80vw;
+    width: 100vw;
     margin-top: $grid;
   }
 
@@ -20,10 +20,19 @@
 
   &__burger-icon {
     font-size: 92%;
+    padding-right: 7px;
+  }
+
+  &__close-icon {
+    font-size: 90%;
   }
 
   &__arrow-icon {
     font-size: 92%;
     padding-left: 9px;
+  }
+
+  &__toggle-button {
+    font-weight: 700;
   }
 }
