@@ -34,5 +34,25 @@
 
   &__toggle-button {
     font-weight: 700;
+    background-color: $color--white;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 0;
+      width: 100%;
+      background-color: yellow;
+      opacity: 0%;
+      transition: height 0.3s $ease-out, opacity 0.3s;
+      mix-blend-mode: multiply;
+    }
+
+    &:hover::after, &:focus::after {
+      height: 100%;
+      opacity: 100%;
+    }
   }
 }

@@ -29,7 +29,7 @@ function toggleMenu(){
       menuItems[i].style.transition = transitionText;
     }
 
-    menuToggleButton.innerHTML = '<i class="fontello-icon menu__burger-icon">&#xe804;</i>MENU';
+    menuToggleButton.innerHTML = '<i class="fontello-icon menu__burger-icon">&#xe807;</i>MENU';
     menuBackgroundOverlay.style.opacity = "0%";
     menuBackgroundOverlay.style.zIndex = "-2";
 
@@ -46,7 +46,7 @@ function toggleMenu(){
       
       menuItems[i].style.transition = transitionText;
 
-      menuToggleButton.innerHTML = '<i class="fontello-icon menu__close-icon">&#xe805;</i>';
+      menuToggleButton.innerHTML = '<i class="fontello-icon menu__close-icon">&#xe808;</i>';
     }
 
     menuBackgroundOverlay.style.opacity = "80%";

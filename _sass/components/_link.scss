@@ -1,0 +1,60 @@
+.link {
+
+  &--black {
+    color: $color--black;
+    text-decoration: none;
+    border-bottom: 2px solid $color--black;
+
+    @include media-query(sm){
+      &::before {
+        content: "";
+        position: absolute;
+        left: -1.5%;
+        bottom: -22%;
+        height: 0;
+        width: 103%;
+        background-color: yellow;
+        opacity: 0%;
+        transition: height 0.3s $ease-out, opacity 0.3s;
+        mix-blend-mode: multiply;
+      }
+
+      &:hover::before, &:focus::before {
+        height: 122%;
+        opacity: 100%;
+      }
+    }
+  }
+
+  &--white {
+    color: $color--white;
+    text-decoration: none;
+    border-bottom: 2px solid $color--white;
+    transition: color 0.3s;
+
+    @include media-query(sm){
+      &::before {
+        content: "";
+        position: absolute;
+        left: -1.5%;
+        bottom: -22%;
+        height: 0;
+        width: 103%;
+        background-color: yellow;
+        opacity: 0%;
+        transition: height 0.3s $ease-out, opacity 0.3s;
+        mix-blend-mode: multiply;
+      }
+
+      &:hover::before, &:focus::before {
+        height: 122%;
+        opacity: 100%;
+      }
+
+      &:hover {
+        color: $color--black;
+        border-bottom: 2px solid $color--black;
+      }
+    }
+  }
+}

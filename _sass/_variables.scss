@@ -22,6 +22,9 @@ $color--black: #0D0F0F;
 $primary-color: $color--white;
 $secondary-color: $color--dark-grey;
 
+/** Transitions */
+$ease-out: cubic-bezier(0.5, 1, 0.89, 1);
+
 /** Media Query Breakpoints */
 
 $media-query-breakpoints: (
