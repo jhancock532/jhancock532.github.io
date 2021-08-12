@@ -10,13 +10,16 @@ const arrays = {
 const bufferInfo = twgl.createBufferInfoFromArrays(gl, arrays);
 
 function render(time) {
-  twgl.resizeCanvasToDisplaySize(gl.canvas);
+  twgl.resizeCanvasToDisplaySize(gl.canvas, 0.5); 
+  //Paint less pixels and save on computation. 
+  //A full resolution canvas requires a graphics card.
+
   gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
   const uniforms = {
-    u_time: time * 0.001,
+    u_time: time * 0.002,
     u_resolution: [gl.canvas.width, gl.canvas.height],
-    u_complex: false
+    u_scroll: window.scrollY,
   };
 
   gl.useProgram(programInfo.program);

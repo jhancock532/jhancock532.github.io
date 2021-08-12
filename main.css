@@ -1,0 +1,84 @@
+
+@font-face {
+  font-family: Baskerville;
+  src: url(/fonts/baskerville/LibreBaskerville-Regular.ttf);
+}
+
+@font-face {
+  font-family: Baskerville;
+  font-style: italic;
+  src: url(/fonts/baskerville/LibreBaskerville-Italic.ttf);
+}
+
+@font-face {
+  font-family: Baskerville;
+  font-weight: bold;
+  src: url(/fonts/baskerville/LibreBaskerville-Bold.ttf);
+}
+
+a, a:visited, a:hover {
+  color: white;
+}
+
+html {
+  scrollbar-color: #880050 #111;
+  scrollbar-color: dark;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(100vh - 10px);
+  padding: 0 0 10px 10px;
+}
+
+#author {
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+#title {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 42px;
+  margin: 20px 0 20px 5px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.subtitle {
+  padding: 0 0 30px 10px;
+  margin: 0;
+}
+
+@media screen and (min-width: 480px) {
+  
+  #hero {
+    height: calc(100vh - 20px);
+    padding: 0 0 20px 20px;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  #author {
+    font-size: 2.5rem;
+    padding-left: 10px;
+  }
+  
+  #title {
+    font-size: 6rem;
+    margin: 20px 0;
+  }
+  
+  p {
+    font-size: 20px;
+  }
+  
+  .subtitle {
+    padding: 0 0 30px 10px;
+    margin: 0;
+  }
+}
