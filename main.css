@@ -1,19 +1,19 @@
 
 @font-face {
   font-family: Baskerville;
-  src: url(/fonts/baskerville/LibreBaskerville-Regular.ttf);
+  src: url(/fonts/baskerville/librebaskerville-regular.ttf);
 }
 
 @font-face {
   font-family: Baskerville;
   font-style: italic;
-  src: url(/fonts/baskerville/LibreBaskerville-Italic.ttf);
+  src: url(/fonts/baskerville/librebaskerville-italic.ttf);
 }
 
 @font-face {
   font-family: Baskerville;
   font-weight: bold;
-  src: url(/fonts/baskerville/LibreBaskerville-Bold.ttf);
+  src: url(/fonts/baskerville/librebaskerville-bold.ttf);
 }
 
 a, a:visited, a:hover {
