@@ -1,49 +1,177 @@
----
-title: James Hancock
-layout: default
----
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<div class="homepage__background"></div>
+  <!--
+  <meta property="og:title" content="TWGL.js - tiny" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://twgljs.org/examples/screenshots/tiny.png" />
+  <meta property="og:description" content="TWGL.js - tiny" />
+  <meta property="og:url" content="http://twgljs.org" />
 
-<div class="homepage__background-menu-overlay" id="menu-background-overlay"></div>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@greggman">
+  <meta name="twitter:creator" content="@greggman">
+  <meta name="twitter:domain" content="twgljs.org">
+  <meta name="twitter:title" content="TWGL.js - tiny">
+  <meta name="twitter:url" content="http://twgljs.org/examples/tiny.html">
+  <meta name="twitter:description" content="TWGL.js - tiny">
+  <meta name="twitter:image:src" content="http://twgljs.org/examples/screenshots/tiny.png">
 
-<div class="homepage__jumbotron">
-  <h1 class="homepage__title">James Hancock</h1>
-  <h3 class="homepage__tagline">Web Developer, Digital Artist.</h3>
-</div>
+  <link href="/resources/images/twgljs-icon.png" rel="shortcut icon" type="image/png">
+  -->
 
-<div class="homepage__menu menu">
-  <div class="button menu__toggle-button" onclick="toggleMenu()" id="menu-toggle-button"><i class="fontello-icon menu__burger-icon">&#xe807;</i>MENU</div>
-  <div class="menu__options-container" id="menu-options-container">
-    <div class="menu__option"><a class="link--black" href="https://codepen.io/collection/nwdrWQ">CodePen Portfolio<i class="fontello-icon menu__arrow-icon">&#xe801;</i></a></div>
-    <div class="menu__option"><a class="link--black" href="https://github.com/jhancock532">GitHub<i class="fontello-icon menu__arrow-icon">&#xe801;</i></a></div>
-    <div class="menu__option"><a class="link--black" href="https://twitter.com/jhancock532">Twitter<i class="fontello-icon menu__arrow-icon">&#xe801;</i></a></div>
-    <!--<div class="menu__option"><a href="#">Work Experience<i class="fontello-icon menu__arrow-icon">&#xe801;</i></a></div>
-    <div class="menu__option"><a href="#">Contact<i class="fontello-icon menu__arrow-icon">&#xe801;</i></a></div>-->
-  </div>
-</div>
+  <title>James's Portfolio</title>
 
-<div class="homepage__portfolio-link"><a class="link--black" href="https://raw.githubusercontent.com/jhancock532/jhancock532.github.io/master/Digital%20Portfolio.pdf">Download Portfolio <i class="fontello-icon download-cloud-icon">&#xe803;</i></a></div>
+  <style>
+      body {
+          margin: 0;
+          font-family: monospace;
+      }
+      canvas {
+          display: block;
+          width: 100vw;
+          height: 100vh;
+      }
+  </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="500"></canvas>
+    <script id="vertexShader" type="x-shader/x-vertex">
+      attribute vec4 position;
 
-<div class="slideshow" id="slideshow">
-  <div class="slideshow__slide">
-    <div class="slideshow__image" style="background-image: url('/assets/images/innovation.jpg');">
-      <div class="slideshow__image-cover"></div>
-    </div>
-    <div class="slideshow__image-link"></div>
-    <div class="slideshow__left-arrow slideshow__arrow"><i class="fontello-icon menu__arrow-icon">&#xe804;</i></div>
-    <div class="slideshow__right-arrow  slideshow__arrow"><i class="fontello-icon menu__arrow-icon">&#xe805;</i></div>
-    <h1 class="slideshow__title"><a class="link--white" href="/compsci">BEng Computer Science with Innovation</a></h1>
-    <h3 class="slideshow__subtitle">2017 - 2020</h3>
-  </div>
-  <div class="slideshow__slide slideshow__slide--hidden">
-    <div class="slideshow__image" style="background-image: url('/assets/images/innovation.jpg');">
-      <div class="slideshow__image-cover"></div>
-    </div>
-    <div class="slideshow__image-link"></div>
-    <div class="slideshow__left-arrow slideshow__arrow"><i class="fontello-icon menu__arrow-icon">&#xe804;</i></div>
-    <div class="slideshow__right-arrow  slideshow__arrow"><i class="fontello-icon menu__arrow-icon">&#xe805;</i></div>
-    <h1 class="slideshow__title"><a class="link--white" href="/compsci">BEng Computer Science with Innovation</a></h1>
-    <h3 class="slideshow__subtitle">2017 - 2020</h3>
-  </div>
-</div>
+      void main() {
+          gl_Position = vec4( position );
+      }
+    </script>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        precision mediump float;
+
+        // By Liam Egan
+        // 2018
+      
+        uniform vec2 u_resolution;
+        uniform float u_time;
+        uniform bool u_complex;
+      
+        const int octaves = 6;
+        const float seed = 43758.5453123;
+        const float seed2 = 73156.8473192;
+      
+        vec2 random2(vec2 st, float seed){
+            st = vec2( dot(st,vec2(127.1,311.7)),
+                      dot(st,vec2(269.5,183.3)) );
+            return -1.0 + 2.0*fract(sin(st)*seed);
+        }
+      
+        // Value Noise by Inigo Quilez - iq/2013
+        // https://www.shadertoy.com/view/lsf3WH
+        float noise(vec2 st, float seed) {
+            vec2 i = floor(st);
+            vec2 f = fract(st);
+    
+            vec2 u = f*f*(3.0-2.0*f);
+    
+            return mix( mix( dot( random2(i + vec2(0.0,0.0), seed ), f - vec2(0.0,0.0) ), 
+                            dot( random2(i + vec2(1.0,0.0), seed ), f - vec2(1.0,0.0) ), u.x),
+                        mix( dot( random2(i + vec2(0.0,1.0), seed ), f - vec2(0.0,1.0) ), 
+                            dot( random2(i + vec2(1.0,1.0), seed ), f - vec2(1.0,1.0) ), u.x), u.y);
+        }
+      
+        float fbm1(in vec2 _st, float seed) {
+          float v = 0.0;
+          float a = 0.5;
+          vec2 shift = vec2(100.0);
+          // Rotate to reduce axial bias
+          mat2 rot = mat2(cos(0.5), sin(0.5),
+                          -sin(0.5), cos(0.50));
+          for (int i = 0; i < octaves; ++i) {
+              v += a * noise(_st, seed);
+              _st = rot * _st * 2.0 + shift;
+              a *= 0.4;
+          }
+          return v;
+        }
+      
+        float pattern(vec2 uv, float seed, float time, inout vec2 q, inout vec2 r) {
+    
+          q = vec2( fbm1( uv * .1 + vec2(0.0,0.0), seed ),
+                        fbm1( uv + vec2(5.2,1.3), seed ) );
+    
+          r = vec2( fbm1( uv * .1 + 4.0*q + vec2(1.7 - time / 2.,9.2), seed ),
+                        fbm1( uv + 4.0*q + vec2(8.3 - time / 2.,2.8), seed ) );
+    
+          vec2 s = vec2( fbm1( uv + 5.0*r + vec2(21.7 - time / 2.,90.2), seed ),
+                        fbm1( uv * .05 + 5.0*r + vec2(80.3 - time / 2.,20.8), seed ) );
+    
+          return fbm1( uv * .05 + 4.0*s, seed );
+        }
+    
+        float pattern2(vec2 uv, float seed, float time, inout vec2 q, inout vec2 r) {
+    
+          q = vec2( fbm1( uv + vec2(0.0,0.0), seed ),
+                        fbm1( uv + vec2(5.2,1.3), seed ) );
+    
+          r = vec2( fbm1( uv + 4.0*q + vec2(1.7 - time / 2.,9.2), seed ),
+                        fbm1( uv + 4.0*q + vec2(8.3 - time / 2.,2.8), seed ) );
+    
+          vec2 s = vec2( fbm1( uv + 5.0*r + vec2(21.7 - time / 2.,90.2), seed ),
+                        fbm1( uv + 5.0*r + vec2(80.3 - time / 2.,20.8), seed ) );
+    
+          vec2 t = vec2( fbm1( uv + 4.0*s + vec2(121.7 - time / 2.,190.2), seed ),
+                        fbm1( uv + 4.0*s + vec2(180.3 - time / 2.,120.8), seed ) );
+    
+          vec2 u = vec2( fbm1( uv + 3.0*t + vec2(221.7 - time / 2.,290.2), seed ),
+                        fbm1( uv + 3.0*t + vec2(280.3 - time / 2.,220.8), seed ) );
+    
+          vec2 v = vec2( fbm1( uv + 2.0*u + vec2(221.7 - time / 2.,290.2), seed ),
+                        fbm1( uv + 2.0*u + vec2(280.3 - time / 2.,220.8), seed ) );
+    
+          return fbm1( uv + 4.0*v, seed );
+        }
+    
+        void main() {
+          vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / u_resolution.y;
+          
+          float time = u_time / 50.;
+          
+          //mat2 rot = mat2(cos(time / 10.), sin(time / 10.),
+          //               -sin(time / 10.), cos(time / 10.));
+          
+          //uv = rot * uv;
+          //uv *= 0.9 * (sin(u_time / 20.)) + 3.;
+          //uv.x -= time / 5.;
+          
+          vec2 q = vec2(0.,0.);
+          vec2 r = vec2(0.,0.);
+          
+          float _pattern = 0.;
+          
+          if(u_complex) {
+            _pattern = pattern2(uv, seed, time, q, r);
+          } else {
+            _pattern = pattern(uv, seed, time, q, r);
+          }
+          
+          vec3 colour = vec3(_pattern) * 2.;
+          colour.r -= dot(q, r) * 15.;
+          colour = mix(colour, vec3(pattern(r, seed2, time, q, r), dot(q, r) * 15., -0.1), .5);
+          colour -= q.y * 1.5;
+          colour = mix(colour, vec3(.2, .2, .2), (clamp(q.x, -1., 0.)) * 3.);
+          colour.g += 0.2;
+          if (colour.g > 1.0){
+            colour.g = 1.0;
+          }
+          //colour += clamp(0.4, 0.8, fract(_pattern * 10.)) / 5.;
+          
+          // gl_FragColor = vec4(abs(colour), 1.);
+          gl_FragColor = vec4(-colour + (abs(colour) * .5), 1.);
+          //gl_FragColor = vec4(abs(colour), 1.);
+        }
+    </script>
+    <script src="twgl.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
