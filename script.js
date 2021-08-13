@@ -9,6 +9,24 @@ const arrays = {
 };
 const bufferInfo = twgl.createBufferInfoFromArrays(gl, arrays);
 
+let mouseX = 0, mouseY = 0, mouseFocus = 0.0;
+
+document.getElementById("content").addEventListener('mousemove', e => {
+  if (window.innerWidth > 600) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    //console.log("mouse moved", e)
+  }
+});
+
+document.getElementById("content").addEventListener('mousedown', e => {
+  if (window.innerWidth > 600) {
+    mouseFocus = 100;
+    //console.log("mouse moved", e)
+  }
+});
+
+
 function render(time) {
   twgl.resizeCanvasToDisplaySize(gl.canvas, 0.5); 
   //Paint less pixels and save on computation. 
@@ -20,7 +38,13 @@ function render(time) {
     u_time: time * 0.002,
     u_resolution: [gl.canvas.width, gl.canvas.height],
     u_scroll: window.scrollY,
+    u_mouse: [mouseX, mouseY],
+    u_focus: mouseFocus,
   };
+
+  if (mouseFocus > 0) {
+    mouseFocus *= 0.95;
+  }
 
   gl.useProgram(programInfo.program);
   twgl.setBuffersAndAttributes(gl, programInfo, bufferInfo);

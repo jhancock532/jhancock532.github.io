@@ -23,6 +23,12 @@ a, a:visited, a:hover {
 html {
   scrollbar-color: #880050 #111;
   scrollbar-color: dark;
+  cursor: none;
+  user-select: none;
+}
+
+#content {
+  width: 100%;
 }
 
 #hero {
