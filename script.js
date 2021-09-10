@@ -9,7 +9,7 @@ const arrays = {
 };
 const bufferInfo = twgl.createBufferInfoFromArrays(gl, arrays);
 
-let mouseX = 0, mouseY = 0, mouseFocus = 0.0;
+let mouseX = 0, mouseY = 0, mouseFocus = 0.0, timeAddition = 0;
 
 document.getElementById("content").addEventListener('mousemove', e => {
   if (window.innerWidth > 600) {
@@ -34,17 +34,18 @@ function render(time) {
 
   gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
 
+  if (mouseFocus > 0) {
+    mouseFocus *= 0.95;
+    //timeAddition += mouseFocus * 1;
+  }
+
   const uniforms = {
-    u_time: time * 0.002,
+    u_time: (time) * 0.002,
     u_resolution: [gl.canvas.width, gl.canvas.height],
     u_scroll: window.scrollY,
     u_mouse: [mouseX, mouseY],
     u_focus: mouseFocus,
   };
-
-  if (mouseFocus > 0) {
-    mouseFocus *= 0.95;
-  }
 
   gl.useProgram(programInfo.program);
   twgl.setBuffersAndAttributes(gl, programInfo, bufferInfo);
@@ -54,3 +55,7 @@ function render(time) {
   requestAnimationFrame(render);
 }
 requestAnimationFrame(render);
+
+const comment = document.createComment("Developed by James Hancock, 2021.\n\nThe background runs using twgljs.org, I've adapted the noise function from a shader by Liam Egan. Website otherwise coded by hand, each byte delivered by electric magic from the GitHub Pages host servers.");
+document.prepend(comment);
+//Comment prepending idea stolen from Jaytel of www.jaytel.com
