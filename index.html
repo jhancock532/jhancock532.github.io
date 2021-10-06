@@ -223,6 +223,16 @@
         </p>
       </div>
 
+      <div id="stinkstudios" style="display: none;">
+        <h1>Stink Studios</h1>
+        <p class="paragraph">
+          I particularly value an office culture that focuses on the details, I've adopted a similar approach for my development work. 
+          When reviewing your website I found a few details that were out of place:<br><br>
+          <a href="pdf/Stink Studios Website Review.pdf">Stink Studios Website Review</a><br><br>
+          Thank you for considering my application. 
+        </p>
+      </div>
+
       <footer id="footer">
         <br>
         <br>
@@ -232,10 +242,16 @@
           
           Thanks to <a href="https://twitter.com/liamegan">Liam Egan</a> for allowing me to remix his shader <a href="https://codepen.io/shubniggurath/pen/NXGbBo">Primordial Soup</a> for the background of this website.
           <br><br>
-          Source code for all projects is available on <a href="https://github.com/jhancock532">GitHub</a>, with many more informal projects on <a href="https://codepen.io/jhancock532">CodePen</a>. Connect on <a href="https://www.linkedin.com/in/james-hancock-52464a119/">LinkedIn</a> or get in touch via <a href="https://twitter.com/jhancock532">Twitter</a>.
+          Source code for all projects is available on <a href="https://github.com/jhancock532">GitHub</a>, with many more creative projects on <a href="https://codepen.io/jhancock532">CodePen</a>. Connect on <a href="https://www.linkedin.com/in/james-hancock-52464a119/">LinkedIn</a> or get in touch via <a href="https://twitter.com/jhancock532">Twitter</a>.
         </p>
       </footer>
     </div>
+
+    <script>
+      if (window.location.search === "?stinkstudios") {
+        document.getElementById("stinkstudios").style.display = "block";
+      }
+    </script>
     <script id="vertexShader" type="x-shader/x-vertex">
       attribute vec4 position;
 
