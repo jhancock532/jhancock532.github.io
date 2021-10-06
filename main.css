@@ -63,6 +63,10 @@ footer {
   display: none;
 }
 
+a[target="_blank"] {
+  font-size: 0; 
+}
+
 @media screen and (min-width: 720px) {
   #showcase {
     max-width: 720px;
